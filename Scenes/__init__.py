@@ -1,0 +1,1 @@
+from Scenes.Game import Scene as Game
