@@ -35,5 +35,5 @@ if __name__ == "__main__":
     director = Director()
     keymapping = ({"LEFT": pygame.K_q, "RIGHT": pygame.K_d},
                   {"LEFT": pygame.K_LEFT, "RIGHT": pygame.K_RIGHT})
-    keymapping = [{"LEFT": pygame.K_LEFT, "RIGHT": pygame.K_RIGHT} for x in range(666)]
+    #keymapping = [{"LEFT": pygame.K_LEFT, "RIGHT": pygame.K_RIGHT} for x in range(666)]
     director.load_scene(Game(director, LigthCycles=keymapping))
