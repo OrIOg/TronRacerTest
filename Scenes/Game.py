@@ -42,8 +42,8 @@ def button(screen, pos, textrender, callback=None):
     isOn = inrect(pygame.mouse.get_pos(), pos, text_size)
 
     if isOn:
-        textrender = pygame.transform.rotozoom(textrender, sin(time.clock() * 1),
-                                                                                0.5 + 0.2 * (cos(time.clock() * 2) + 1))
+        textrender = pygame.transform.rotozoom(textrender, sin(time.perf_counter() * 1),
+                                                                                0.5 + 0.2 * (cos(time.perf_counter() * 2) + 1))
         if pygame.mouse.get_pressed()[0]:
             callback()
     screen.blit(textrender, pos)
@@ -144,7 +144,7 @@ class Scene:
 
         size = screen.get_rect().size
 
-        message = pygame.transform.rotozoom(self.text["Message"], cos(time.clock() * 2) * 1, 1 + 0.2 * (sin(time.clock() * 2)+1))
+        message = pygame.transform.rotozoom(self.text["Message"], cos(time.perf_counter() * 2) * 1, 1 + 0.2 * (sin(time.perf_counter() * 2)+1))
 
         button(screen, [size[0]*0.5, size[1]*0.3], self.text["Replay"], self.reset)
         button(screen, [size[0]*0.5, size[1]*0.45], self.text["Quit"], self.quit)
